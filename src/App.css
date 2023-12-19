@@ -38,7 +38,7 @@
 }
 
 .bg-primary {
-  background-color: #B22222;
+  background-color: #31304D;
 }
 .bg-secondary {
   background-color: #eff5f5;
@@ -46,6 +46,18 @@
 .bg-card {
   background-color: #d6e3e8;
 }
+
 .bg-white {
   background-color: white;
+}
+
+.bg-sidebar-window {
+  background-color: #161A30;
+  color: white;
+}
+
+
+.bg-chat-window {
+  background-color: #31304D;
+  color: white;
 }

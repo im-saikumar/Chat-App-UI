@@ -17,7 +17,7 @@ const ChatApp = () => {
         </div>
 
         <div
-          className="bg-secondary"
+          className="bg-sidebar-window"
           style={{ width: "40vh", height: "95vh" }}
         ></div>
       </div>
