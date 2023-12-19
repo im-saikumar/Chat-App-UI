@@ -74,9 +74,9 @@ const ChatComponent = () => {
 
   return (
     <div>
-      <div id="chat-container" style={{ height: "86vh", margin: "1%" , overflowY: "auto", }}>
-        <div
-          className="bg-card"
+      <div id="chat-container"  className="bg-chat-window" style={{ height: "86vh", margin: "1%" , overflowY: "auto", }}>
+        {/* <div
+          className="bg-chat-window"
           style={{
             height: "5vh",
             padding: "1.2vh 2vh",
@@ -84,8 +84,7 @@ const ChatComponent = () => {
             margin: "10px 0",
           }}
         > 
-        {/* Build By SAI KUMAR */}
-        </div>
+        </div> */}
         {imessage.map((msg) => <Chatmessage msg={msg} />)}
         {loading && <Loader/>}
       </div>
@@ -106,7 +105,7 @@ const ChatComponent = () => {
           }}
         />
         <button
-          className="bg-primary font-white"
+          className="bg-chat-window font-white"
           style={{
             padding: "8px 20px",
             border: "none",
@@ -116,7 +115,7 @@ const ChatComponent = () => {
           onClick={send}
           type="submit"
         >
-          send
+          ➡🔍
         </button>
       </div>
     </div>
