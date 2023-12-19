@@ -51,12 +51,12 @@ const ChatComponent = () => {
         }}
       >
         <div
-          className={`font-white ${!bot ? "bg-highlight font-white" : "bg-highlight font-white"}`}
+          className={`font-white ${!bot ? "bg-highlight2 font-white" : "bg-highlight font-white"}`}
           style={{
             // flex:1,
             minHeight: "5vh",
             minWidth: "10vh",
-            maxWidth: "80vh",
+            maxWidth: "100%",
             padding: "8px 15px",
             borderRadius: !bot ? "8px 8px 8px 0" : "8px 8px 0 8px",
             margin: "5px 0",

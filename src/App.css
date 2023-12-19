@@ -53,7 +53,10 @@
 }
 
 .bg-highlight {
-  background-color: #1363DF;
+  background-color: rgb(56, 131, 245);
+}
+.bg-highlight2 {
+  background-color: #6B99C3;
 }
 
 /* .bg-sidebar-window {
