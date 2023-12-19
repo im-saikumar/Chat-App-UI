@@ -51,12 +51,12 @@ const ChatComponent = () => {
         }}
       >
         <div
-          className={`font-white ${!bot ? "bg-card font-black" : "bg-card font-black"}`}
+          className={`font-white ${!bot ? "bg-highlight font-white" : "bg-highlight font-white"}`}
           style={{
             // flex:1,
             minHeight: "5vh",
             minWidth: "10vh",
-            maxWidth: "50vh",
+            maxWidth: "80vh",
             padding: "8px 15px",
             borderRadius: !bot ? "8px 8px 8px 0" : "8px 8px 0 8px",
             margin: "5px 0",
@@ -65,7 +65,7 @@ const ChatComponent = () => {
           {/* <p style={{ margin: 0, fontSize: "large" }}>
             {bot ? "🤖" : "🕴"} :
           </p> */}
-          <p style={{ margin: 0 }}> {!bot ? "🕴" : "🤖"} :{msg.message}</p>
+          <p style={{ margin: 0 }}> {!bot ? "🕴" : "🤖"}: {msg.message}</p>
         </div>
         <div style={{ flex: 2 }}></div>
       </div>
@@ -76,7 +76,7 @@ const ChatComponent = () => {
     <div>
       <div id="chat-container" style={{ height: "86vh", margin: "1%" , overflowY: "auto", }}>
         <div
-          className="bg-card"
+          className="bg-secondary"
           style={{
             height: "5vh",
             padding: "1.2vh 2vh",
@@ -98,14 +98,15 @@ const ChatComponent = () => {
           style={{
             flex: 1,
             height: "4vh",
+            color: "black",
             padding: "15px",
             borderRadius: "8px",
             marginRight: "5px",
-            border: "1px solid #497173",
+            border: "1px solid white",
           }}
         />
         <button
-          className="bg-primary font-white"
+          className="bg-highlight font-white"
           style={{
             padding: "8px 20px",
             border: "none",

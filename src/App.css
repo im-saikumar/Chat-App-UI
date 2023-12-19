@@ -4,6 +4,7 @@
   font-weight: 400;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 .center {
@@ -34,18 +35,22 @@
 }
 
 .font-black {
-  color: black;
+  color: white;
 }
 
 .bg-primary {
-  background-color: #B22222;
+  background-color: #313131;
 }
 .bg-secondary {
-  background-color: #eff5f5;
+  background-color: #414141;
 }
 .bg-card {
-  background-color: #d6e3e8;
+  background-color: #525252;
 }
 .bg-white {
-  background-color: white;
+  background-color: #525252;
+}
+
+.bg-highlight {
+  background-color: #1363DF;
 }

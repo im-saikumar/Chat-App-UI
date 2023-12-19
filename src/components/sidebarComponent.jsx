@@ -4,16 +4,16 @@ import DocumnetCard from './DocumnetCard'
 const SidebarComponent = () => {
   return (
     <div
-    className="bg-secondary"
     style={{ width: "40vh", height: "95vh", padding: "10px" }}
   >
     <div style={{ height: "70vh" }}>
       <p className="font-nrml">Imported Documents</p>
-      <DocumnetCard />
-      <DocumnetCard />
+      <DocumnetCard>document 1</DocumnetCard>
+      <DocumnetCard>document 2</DocumnetCard>
+
     </div>
     <div
-      className="bg-card"
+      className="bg-primary"
       style={{
         height: "20vh",
         boxSizing: "border-box",

@@ -9,10 +9,10 @@ const ChatApp = () => {
   return (
     <>
       <Header />
-      <div className="flex">
+      <div className="bg-secondary flex">
         <SidebarComponent />
 
-        <div style={{ width: "100%", height: "95vh" }}>
+        <div className="bg-primary" style={{ width: "100%", height: "95vh" }}>
           <ChatComponent/>
         </div>
 
