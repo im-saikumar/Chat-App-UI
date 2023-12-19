@@ -1,18 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Loader from "./loader";
 
 const ChatComponent = () => {
   const [imessage, setImessage] = useState([{ bot: true, message: "hello" }]);
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false)
+
+
+  const scrollToBottom = () => {
+    const chatContainer = document.getElementById("chat-container");
+    if(chatContainer){
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [imessage]);
 
   function send() {
-    setImessage((prev) => [
-      ...prev,
-      {
-        bot: false,
-        message: text,
-      },
-    ]);
+    setImessage((prev) => [...prev,{bot: false,message: text,}]);
     setText("");
+    setLoading(true)
+    
+    fetch(`http://127.0.0.1:8000/genai/chat?user_query=${text}`, {
+      method: "POST", // or 'PUT'
+      headers: { "Content-Type": "application/json" },
+      // body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setImessage((prev) => [...prev,{bot: true,message: data.message,}]);
+        setLoading(false) 
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function pressEnter(e){
+    if (e.key === 'Enter') send()
   }
 
   const Chatmessage = function ({ msg }) {
@@ -48,7 +74,7 @@ const ChatComponent = () => {
 
   return (
     <div>
-      <div style={{ height: "86vh", margin: "1%" }}>
+      <div id="chat-container" style={{ height: "86vh", margin: "1%" , overflowY: "auto", }}>
         <div
           className="bg-card"
           style={{
@@ -57,26 +83,25 @@ const ChatComponent = () => {
             borderRadius: "8px",
             margin: "10px 0",
           }}
-        >
-          {" "}
-          user name
+        >user name
         </div>
-        {imessage.map((msg) => (
-          <Chatmessage msg={msg} />
-        ))}
+        {imessage.map((msg) => <Chatmessage msg={msg} />)}
+        {loading && <Loader/>}
       </div>
+
       <div style={{ display: "flex", margin: "0 1%" }}>
         <input
           placeholder="Type your message here"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => pressEnter(e)}
           style={{
             flex: 1,
             height: "4vh",
             padding: "15px",
             borderRadius: "8px",
             marginRight: "5px",
-            border: "1px solid #497173"
+            border: "1px solid #497173",
           }}
         />
         <button
