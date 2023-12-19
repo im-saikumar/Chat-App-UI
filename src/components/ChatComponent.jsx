@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Loader from "./loader";
 
 const ChatComponent = () => {
-  const [imessage, setImessage] = useState([{ bot: true, message: "hello" }]);
+  const [imessage, setImessage] = useState([{ bot: true, message: "How I can assist you with ? " }]);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false)
 
@@ -47,25 +47,25 @@ const ChatComponent = () => {
       <div
         style={{
           display: "flex",
-          flexDirection: bot ? "row" : "row-reverse",
+          flexDirection: !bot ? "row" : "row-reverse",
         }}
       >
         <div
-          className={`font-white ${bot ? "bg-primary" : "bg-card font-black"}`}
+          className={`font-white ${!bot ? "bg-card font-black" : "bg-card font-black"}`}
           style={{
             // flex:1,
             minHeight: "5vh",
             minWidth: "10vh",
             maxWidth: "50vh",
             padding: "8px 15px",
-            borderRadius: bot ? "8px 8px 8px 0" : "8px 8px 0 8px",
+            borderRadius: !bot ? "8px 8px 8px 0" : "8px 8px 0 8px",
             margin: "5px 0",
           }}
         >
-          <p style={{ margin: 0, fontSize: "smaller" }}>
-            {bot ? "bot" : "me"} :
-          </p>
-          <p style={{ margin: 0 }}>{msg.message}</p>
+          {/* <p style={{ margin: 0, fontSize: "large" }}>
+            {bot ? "🤖" : "🕴"} :
+          </p> */}
+          <p style={{ margin: 0 }}> {!bot ? "🕴" : "🤖"} :{msg.message}</p>
         </div>
         <div style={{ flex: 2 }}></div>
       </div>
