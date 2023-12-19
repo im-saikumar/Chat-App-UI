@@ -83,7 +83,8 @@ const ChatComponent = () => {
             borderRadius: "8px",
             margin: "10px 0",
           }}
-        >user name
+        > 
+        {/* Build By SAI KUMAR */}
         </div>
         {imessage.map((msg) => <Chatmessage msg={msg} />)}
         {loading && <Loader/>}
