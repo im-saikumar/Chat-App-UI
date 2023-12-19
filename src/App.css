@@ -47,10 +47,22 @@
 .bg-card {
   background-color: #525252;
 }
+
 .bg-white {
   background-color: #525252;
 }
 
 .bg-highlight {
   background-color: #1363DF;
+}
+
+.bg-sidebar-window {
+  background-color: #161A30;
+  color: white;
+}
+
+
+.bg-chat-window {
+  background-color: #31304D;
+  color: white;
 }

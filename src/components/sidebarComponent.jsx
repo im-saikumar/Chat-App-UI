@@ -21,10 +21,10 @@ const SidebarComponent = () => {
         borderRadius: "8px",
       }}
     >
-      <p style={{padding: '5px 0'}}>Upload Document</p>
-      <p style={{padding: '5px 0'}}>Delete all Document</p>
+      {/* <p style={{padding: '5px 0'}}>Upload Document</p> */}
+      {/* <p style={{padding: '5px 0'}}>Delete all Document</p>
       <p style={{padding: '5px 0'}}>Clear history</p>
-      <p style={{padding: '5px 0'}}>Export history</p>
+      <p style={{padding: '5px 0'}}>Export history</p> */}
     </div>
   </div>
 
