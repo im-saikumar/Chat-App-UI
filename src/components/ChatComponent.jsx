@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Loader from "./loader";
 
 const ChatComponent = () => {
-  const [imessage, setImessage] = useState([{ bot: true, message: "hello" }]);
+  const [imessage, setImessage] = useState([{ bot: true, message: "How I can assist you with ? " }]);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false)
 
@@ -62,10 +62,10 @@ const ChatComponent = () => {
             margin: "5px 0",
           }}
         >
-          <p style={{ margin: 0, fontSize: "large" }}>
+          {/* <p style={{ margin: 0, fontSize: "large" }}>
             {bot ? "🤖" : "🕴"} :
-          </p>
-          <p style={{ margin: 0 }}>{msg.message}</p>
+          </p> */}
+          <p style={{ margin: 0 }}> {bot ? "🤖 " : "🕴"} :{msg.message}</p>
         </div>
         <div style={{ flex: 2 }}></div>
       </div>
