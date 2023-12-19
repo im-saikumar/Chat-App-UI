@@ -51,7 +51,7 @@ const ChatComponent = () => {
         }}
       >
         <div
-          className={`font-white ${bot ? "bg-primary" : "bg-card font-black"}`}
+          className={`font-white ${bot ? "bg-card font-black" : "bg-card font-black"}`}
           style={{
             // flex:1,
             minHeight: "5vh",
@@ -62,8 +62,8 @@ const ChatComponent = () => {
             margin: "5px 0",
           }}
         >
-          <p style={{ margin: 0, fontSize: "smaller" }}>
-            {bot ? "bot" : "me"} :
+          <p style={{ margin: 0, fontSize: "large" }}>
+            {bot ? "🤖" : "🕴"} :
           </p>
           <p style={{ margin: 0 }}>{msg.message}</p>
         </div>
