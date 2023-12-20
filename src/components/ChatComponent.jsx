@@ -19,6 +19,7 @@ const ChatComponent = () => {
   }, [imessage]);
 
   function send() {
+    if(text !== "") {
     setImessage((prev) => [...prev,{bot: false,message: text,}]);
     setText("");
     setLoading(true)
@@ -31,10 +32,11 @@ const ChatComponent = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setImessage((prev) => [...prev,{bot: true,message: data.message,}]);
+        setImessage((prev) => [...prev,{bot: true,message: data.answer,}]);
         setLoading(false) 
       })
       .catch((err) => console.log(err));
+    }
   }
 
   function pressEnter(e){
@@ -50,22 +52,23 @@ const ChatComponent = () => {
           flexDirection: !bot ? "row" : "row-reverse",
         }}
       >
+        <div style={{margin: '15px 5px 0px'}}>{bot ? ": 🤖" : "🙎‍♂️ :" }</div>
         <div
-          className={`font-white ${!bot ? "bg-highlight2 font-white" : "bg-highlight font-white"}`}
+          className={`font-white ${bot ? "bg-highlight font-white" : "bg-highlight2 font-white" }`}
           style={{
             // flex:1,
             minHeight: "5vh",
             minWidth: "10vh",
-            maxWidth: "100%",
+            maxWidth: "90%",
             padding: "8px 15px",
-            borderRadius: !bot ? "8px 8px 8px 0" : "8px 8px 0 8px",
-            margin: "5px 0",
+            borderRadius: bot ? "8px 8px 0 8px" : "8px 8px 8px 0",
+            margin: "5px",
           }}
         >
           {/* <p style={{ margin: 0, fontSize: "large" }}>
             {bot ? "🤖" : "🕴"} :
           </p> */}
-          <p style={{ margin: 0 }}> {!bot ? "🕴" : "🤖"}: {msg.message}</p>
+          <p style={{ margin: 0 }}>{msg.message}</p>
         </div>
         <div style={{ flex: 2 }}></div>
       </div>
